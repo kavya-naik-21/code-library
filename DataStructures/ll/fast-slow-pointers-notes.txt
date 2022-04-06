@@ -1,0 +1,16 @@
+Distance traveled by fast pointer = 2 * (Distance traveled 
+                                         by slow pointer)
+
+(m + n*x + k) = 2*(m + n*y + k)
+
+Note that before meeting the point shown above, fast
+was moving at twice speed.
+
+x -->  Number of complete cyclic rounds made by 
+       fast pointer before they meet first time
+
+y -->  Number of complete cyclic rounds made by 
+       slow pointer before they meet first time
+       
+       
+
