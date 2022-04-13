@@ -5,20 +5,19 @@ using namespace std;
 int32_t main()
 {
     int t; cin>>t;
-    map<int,int>mp;
     while(t--){
         int n; cin>>n;
-        bool ans=false;
-        for(int i=0;i<=10000;i++){
-            int l=0,r=10000;
+        bool flag=false;
+        for(int i=1;i<=10000;i++){
+            int l=1,r=10000;
             while(l<r){
                 int mid=(l+r)/2;
-                if(i*i*i+mid*mid*mid<=n) l=mid+1;
-                else r=mid;
+                if(i*i*i+mid*mid*mid==n) { flag=true; break; }
+                else if(i*i*i+mid*mid*mid>n) r=mid;
+                else l=mid+1;
             }
-            if(i*i*i+l*l*l==n) ans=true;
         }
-        cout<<(ans?"yes":"no")<<endl;
+        cout<<(flag?"yes":"no")<<endl;
     }
     return 0;
 }

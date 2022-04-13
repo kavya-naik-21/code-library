@@ -1,29 +1,39 @@
-#include <bits/stdc++.h>
-#define int long long int
+// C++ program to find out execution time of
+// of functions
+#include <algorithm>
+#include <chrono>
+#include <iostream>
+#include<vector>
 using namespace std;
+using namespace std::chrono;
 
-int32_t main()
+// For demonstration purpose, we will fill up
+// a vector with random integers and then sort
+// them using sort function. We fill record
+// and print the time required by sort function
+int main()
 {
-    int t; cin>>t;
-    while(t--){
-        int n; cin>>n;
-        map<int,int>mp;
-        for(int i=0;i<n;i++){
-            int temp; cin>>temp;
-            mp[temp]++;
-        }
-        int max=0;
-        for(auto u:mp){
-            if(u.second>max) max=u.second;
-        }
-        int ans=0;
-        while((n-max)>0){
-            ans+=min(n-max,max);
-            ans++;
-            max*=2;
-        }
-        cout<<ans<<endl;
-    }
-    return 0;
-}
 
+
+
+	// Get starting timepoint
+	auto start = high_resolution_clock::now();
+
+	// Call the function, here sort()
+	
+    int cnt=0;
+    for(int i=0;i<1660964;i++) cnt++;
+
+	// Get ending timepoint
+	auto stop = high_resolution_clock::now();
+
+	// Get duration. Substart timepoints to
+	// get duration. To cast it to proper unit
+	// use duration cast method
+	auto duration = duration_cast<microseconds>(stop - start);
+
+	cout << "Time taken by function: "
+		<< duration.count() << " microseconds" << endl;
+
+	return 0;
+}
